@@ -1,0 +1,54 @@
+{% load static %}
+    <div class="main_block">
+      <div class="nav_bar">
+        <h1>Insight</h1>
+      </div>
+      <div class="illustration">
+        <div class="decription">
+          <h4>Anything regarding the Application</h4>
+          <p>A description about the product</p>
+          <div class="login_btn">
+            <a href="{% url 'show_login' %}">
+              <button type="button" class="btn_login">
+                Login
+              </button> 
+            </a>
+          </div>
+        </div>
+        <img src="{% static "dist/img/undraw_online_learning_re_qw08.svg" %}" alt="online clasroom" />
+      </div>
+    </div>
+    <style>
+      .nav_bar {
+        font-family: "Mulish", sans-serif;
+        font-size: 15px;
+        margin-left: 2em;
+      }
+      .illustration {
+        font-family: "Mulish", sans-serif;
+        font-size: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 5em;
+        margin-left: 2em;
+      }
+      .illustration img {
+        width: 80vh;
+      }
+      .login_btn {
+        font-family: "Mulish";
+        margin-left: 2em;
+      }
+      .btn_login {
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        width: 5em;
+        height: 2em;
+        background-color: #0b72e7;
+        border-style: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
