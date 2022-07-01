@@ -1,54 +1,70 @@
 {% load static %}
-    <div class="main_block">
-      <div class="nav_bar">
-        <h1>Insight</h1>
+<div class="main_block">
+  <div class="nav_bar">
+    <h1>Insight</h1>
+  </div>
+  <div class="illustration">
+    <div class="decription">
+      <h1>Student Management System.</h1>
+      <div class="intro-grid">
+        <p>
+          Students Management System is an online web application, which retails
+          various students and teacher access it. This project allows viewing
+          various things like attendance, courses, notes etc. This project
+          provides an easy access to Administrators and Managers to view
+          details.
+        </p>
+        <img src="{% static "dist/img/undraw_online_learning_re_qw08.svg" %}"
+        alt="online clasroom" />
       </div>
-      <div class="illustration">
-        <div class="decription">
-          <h4>Anything regarding the Application</h4>
-          <p>A description about the product</p>
-          <div class="login_btn">
-            <a href="{% url 'show_login' %}">
-              <button type="button" class="btn_login">
-                Login
-              </button> 
-            </a>
-          </div>
-        </div>
-        <img src="{% static "dist/img/undraw_online_learning_re_qw08.svg" %}" alt="online clasroom" />
+
+      <div class="login_btn">
+        <a href="{% url 'show_login' %}">
+          <button type="button" class="btn_login">Login</button>
+        </a>
       </div>
     </div>
-    <style>
-      .nav_bar {
-        font-family: "Mulish", sans-serif;
-        font-size: 15px;
-        margin-left: 2em;
-      }
-      .illustration {
-        font-family: "Mulish", sans-serif;
-        font-size: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 5em;
-        margin-left: 2em;
-      }
-      .illustration img {
-        width: 80vh;
-      }
-      .login_btn {
-        font-family: "Mulish";
-        margin-left: 2em;
-      }
-      .btn_login {
-        font-size: 20px;
-        color: white;
-        text-align: center;
-        width: 5em;
-        height: 2em;
-        background-color: #0b72e7;
-        border-style: none;
-        border-radius: 10px;
-        cursor: pointer;
-      }
-    </style>
+  </div>
+</div>
+<style>
+  .nav_bar {
+    font-family: "Mulish", sans-serif;
+    font-size: 15px;
+    margin-left: 2em;
+  }
+  .illustration {
+    font-family: "Mulish", sans-serif;
+    margin-top: 5em;
+    margin-left: 2em;
+  }
+  .illustration h1{
+    align-item: center;
+  }
+  
+  .illustration img {
+    width: 50vh;
+  }
+  .login_btn {
+    font-family: "Mulish";
+    margin-left: 2em;
+  }
+  .btn_login {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    width: 5em;
+    height: 2em;
+    background-color: #0b72e7;
+    border-style: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .intro-grid{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .intro-grid p{
+    font-size: 20px;
+    width: 25em;
+  }
+</style>

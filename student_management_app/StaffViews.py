@@ -11,7 +11,7 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
 from student_management_app.models import Subjects, SessionYearModel, Students, Attendance, AttendanceReport, \
-    LeaveReportStaff, Staffs, FeedBackStaffs, CustomUser, Courses, NotificationStaffs, StudentResult
+    LeaveReportStaff, Staffs, FeedBackStudent, FeedBackStaffs, CustomUser, Courses, NotificationStaffs, StudentResult
 
 
 def staff_home(request):
@@ -176,7 +176,23 @@ def staff_apply_leave_save(request):
         except:
             messages.error(request, "Failed To Apply for Leave")
             return HttpResponseRedirect(reverse("staff_apply_leave"))
+  
+def staff_student_feedback_message(request):
+    feedbacks=FeedBackStudent.objects.all()
+    return render(request,"staff_template/staff_student_grievance.html",{"feedbacks":feedbacks})
 
+@csrf_exempt
+def staff_student_feedback_message_replied(request):
+    feedback_id=request.POST.get("id")
+    feedback_message=request.POST.get("message")
+
+    try:
+        feedback=FeedBackStudent.objects.get(id=feedback_id)
+        feedback.feedback_reply=feedback_message
+        feedback.save()
+        return HttpResponse("True")
+    except:
+        return HttpResponse("False")    
 
 def staff_feedback(request):
     staff_id=Staffs.objects.get(admin=request.user.id)

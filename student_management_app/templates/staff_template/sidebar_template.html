@@ -65,7 +65,16 @@
             <a href="{{ staff_feedback }}" class="nav-link {% if request.path == staff_feedback %} active {% endif %}">
               <i class="nav-icon fas fa-comments"></i>
               <p>
-                Feedback
+                Grievance
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+             {% url 'staff_student_feedback_message' as staff_student_feedback_message %}
+            <a href="{% url 'staff_student_feedback_message' %}" class="nav-link {% if request.path == staff_student_feedback_message %} active {% endif %}">
+              <i class="nav-icon fas fa-comments"></i>
+              <p>
+                Student Feedback
               </p>
             </a>
           </li>
